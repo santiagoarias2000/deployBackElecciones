@@ -23,9 +23,6 @@ class Server {
         this.app.use((0, morgan_1.default)("dev"));
         this.app.use(express_1.default.json({ limit: "100mb" }));
         this.app.use(express_1.default.urlencoded({ extended: true }));
-        this.app.use((0, cors_1.default)({
-            origin: 'https://guiaelectoraldecolombia.onrender.com'
-        }));
     }
     activeRoute() {
         this.app.use('/api/public/camara', CamaraRoute_1.default);
