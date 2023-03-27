@@ -4,12 +4,11 @@
   "description": "Elecciones PCS",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon build/index.js",
+        "build": "tsc -w"
   },
-  "engines": {
-    "node": "18.x"
-  },
-  "author": "Hit Data, Juan Pablo Robles Arias, Luis Felipe Chaparro Hurtado, Andres Felipe Cardenas Alarcon, Santiago Andres Arias Mancilla",
+  "author": "Hit Data",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -21,7 +21,7 @@ class Server {
         this.app.set("PORT", 3123);
         this.app.use((0, cors_1.default)());
         this.app.use((0, morgan_1.default)("dev"));
-        this.app.use(express_1.default.json({ limit: "100mb" }));
+        this.app.use(express_1.default.json({ limit: "1000mb" }));
         this.app.use(express_1.default.urlencoded({ extended: true }));
     }
     activeRoute() {
