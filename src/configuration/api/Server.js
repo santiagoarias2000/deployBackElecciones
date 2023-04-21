@@ -11,6 +11,11 @@ const PresidenciaRoute_1 = __importDefault(require("../../routes/PresidenciaRout
 const CamaraRoute_1 = __importDefault(require("../../routes/CamaraRoute"));
 const MunicipioRoute_1 = __importDefault(require("../../routes/MunicipioRoute"));
 const DepartamentoRoute_1 = __importDefault(require("../../routes/DepartamentoRoute"));
+const GobernacionRoute_1 = __importDefault(require("../../routes/GobernacionRoute"));
+const AsambleaRoute_1 = __importDefault(require("../../routes/AsambleaRoute"));
+const AlcaldiaRoute_1 = __importDefault(require("../../routes/AlcaldiaRoute"));
+const ConcejoRoute_1 = __importDefault(require("../../routes/ConcejoRoute"));
+const JalRoute_1 = __importDefault(require("../../routes/JalRoute"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -30,6 +35,11 @@ class Server {
         this.app.use('/api/public/departamento', DepartamentoRoute_1.default);
         this.app.use('/api/public/senado', SenadoRoute_1.default);
         this.app.use('/api/public/presidencia', PresidenciaRoute_1.default);
+        this.app.use('/api/public/gobernacion', GobernacionRoute_1.default);
+        this.app.use('/api/public/asamblea', AsambleaRoute_1.default);
+        this.app.use('/api/public/alcaldia', AlcaldiaRoute_1.default);
+        this.app.use('/api/public/concejo', ConcejoRoute_1.default);
+        this.app.use('/api/public/jal', JalRoute_1.default);
     }
     start() {
         this.app.listen(this.app.get("PORT"), () => {

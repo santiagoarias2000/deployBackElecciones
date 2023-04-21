@@ -22,7 +22,7 @@ class ListDao {
             })
                 .catch((myErr) => {
                 console.log('Error en el daos: ', myErr);
-                res.status(400).json({ respuesta: 'No esta trabajando el daos' });
+                res.status(401).json({ respuesta: 'No esta trabajando el daos' });
             });
         });
     }
