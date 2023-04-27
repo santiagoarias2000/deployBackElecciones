@@ -41,6 +41,11 @@ class DepartamentoController extends ListDao_1.default {
         const parametro = [id_department];
         DepartamentoController.getInfo(sql_list_departamento_1.SQL_DEPARTMENT.LIST_DEPARTMENT_ASAMBLEA, parametro, res);
     }
+    getMeListAlcaldiaDepartment(req, res) {
+        const id_department = req.params.idDepartment;
+        const parametro = [id_department];
+        DepartamentoController.getInfo(sql_list_departamento_1.SQL_DEPARTMENT.LIST_DEPARTMENT_ALCALDIA, parametro, res);
+    }
     getMeListConcejoDepartment(req, res) {
         const id_department = req.params.idDepartment;
         const parametro = [id_department];

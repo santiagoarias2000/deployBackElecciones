@@ -18,6 +18,7 @@ class DepartmentRoutes {
         this.routeApiDepartamento.get("/indigenaSenado/:idDepartment", DepartamentoController_1.default.getMeListIndigenaSenadoDepartment);
         this.routeApiDepartamento.get("/gobernacion/:idDepartment", DepartamentoController_1.default.getMeListGobernacionDepartment);
         this.routeApiDepartamento.get("/asamblea/:idDepartment", DepartamentoController_1.default.getMeListAsambleaDepartment);
+        this.routeApiDepartamento.get("/alcaldia/:idDepartment", DepartamentoController_1.default.getMeListAlcaldiaDepartment);
         this.routeApiDepartamento.get("/jal/:idDepartment", DepartamentoController_1.default.getMeListJalDepartment);
         this.routeApiDepartamento.get("/concejo/:idDepartment", DepartamentoController_1.default.getMeListConcejoDepartment);
     }
