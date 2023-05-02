@@ -16,6 +16,11 @@ class MunicipioController extends ListDao_1.default {
         const parametro = [id_municipality];
         MunicipioController.getInfo(sql_list_municipio_1.SQL_MUNICIPIO.ONE_MUNICIPALITY, parametro, res);
     }
+    getMeLocalidad(req, res) {
+        const id_municipality = req.params.idMunicipality;
+        const parametro = [id_municipality];
+        MunicipioController.getInfo(sql_list_municipio_1.SQL_MUNICIPIO.ONE_LOCATION, parametro, res);
+    }
 }
 const municipioController = new MunicipioController();
 exports.default = municipioController;

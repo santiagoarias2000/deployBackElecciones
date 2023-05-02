@@ -15,6 +15,8 @@ class JalRoute {
         this.routesApiJal.get("", ListJalController_1.default.getMeListCamaraTerritorial);
         this.routesApiJal.get("/departamento/:idDepartment", JalController_1.default.getMeListJalDepartamento);
         this.routesApiJal.get("/municipio/:idMunicipality", JalController_1.default.getMeListJalDepartamentoMunicipio);
+        this.routesApiJal.get("/departamento/bogota/:idDepartment", JalController_1.default.getMeListJalBogotaLocation);
+        this.routesApiJal.get("/localidad/:idMunicipality", JalController_1.default.getMeListJalLocation);
     }
 }
 const jalRoute = new JalRoute();

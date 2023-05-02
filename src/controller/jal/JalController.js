@@ -16,6 +16,16 @@ class JalController extends ListDao_1.default {
         const parametro = [id_municipality];
         JalController.getInfoEspecific(sql_details_especific_jal_1.SQL_DETAILS_ESPECIFICS_JAL.JAL_DEPARTAMENTO_MUNICICPIO, parametro, res);
     }
+    getMeListJalBogotaLocation(req, res) {
+        const id_department = req.params.idDepartment;
+        const parametro = [id_department];
+        JalController.getInfoEspecific(sql_details_especific_jal_1.SQL_DETAILS_ESPECIFICS_JAL.JAL_LOCATIONS_BOGOTA, parametro, res);
+    }
+    getMeListJalLocation(req, res) {
+        const id_location = req.params.idMunicipality;
+        const parametro = [id_location];
+        JalController.getInfoEspecific(sql_details_especific_jal_1.SQL_DETAILS_ESPECIFICS_JAL.JAL_LOCATION, parametro, res);
+    }
 }
 const jalController = new JalController();
 exports.default = jalController;

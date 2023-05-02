@@ -11,4 +11,8 @@ exports.SQL_MUNICIPIO = {
     FROM municipality mu \
     WHERE mu.id_municipality=$1 \
     ORDER BY mu.name_municipality ASC",
+    ONE_LOCATION: "SELECT lo.id_location,(SELECT dp.name_department FROM department dp WHERE dp.id_department = 11) AS department,lo.name_location AS name_municipality \
+  FROM location lo \
+  WHERE lo.id_location=$1\
+  LIMIT 1"
 };

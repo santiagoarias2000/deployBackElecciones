@@ -13,6 +13,7 @@ class MunicipioRoutes {
     setting() {
         this.routeApiMunicipio.get("/:idDepartment", MunicipioController_1.default.getMeListDepartment);
         this.routeApiMunicipio.get("/one/:idMunicipality", MunicipioController_1.default.getMeMunicipio);
+        this.routeApiMunicipio.get("/localidad/one/:idMunicipality", MunicipioController_1.default.getMeLocalidad);
     }
 }
 const municipioRoutes = new MunicipioRoutes();
