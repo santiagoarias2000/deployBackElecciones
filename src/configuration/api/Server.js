@@ -16,6 +16,7 @@ const AsambleaRoute_1 = __importDefault(require("../../routes/AsambleaRoute"));
 const AlcaldiaRoute_1 = __importDefault(require("../../routes/AlcaldiaRoute"));
 const ConcejoRoute_1 = __importDefault(require("../../routes/ConcejoRoute"));
 const JalRoute_1 = __importDefault(require("../../routes/JalRoute"));
+const UserRoute_1 = __importDefault(require("../../routes/UserRoute"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -40,6 +41,7 @@ class Server {
         this.app.use('/api/public/alcaldia', AlcaldiaRoute_1.default);
         this.app.use('/api/public/concejo', ConcejoRoute_1.default);
         this.app.use('/api/public/jal', JalRoute_1.default);
+        this.app.use('/api/public/user', UserRoute_1.default);
     }
     start() {
         this.app.listen(this.app.get("PORT"), () => {
