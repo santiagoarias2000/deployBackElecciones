@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
 const express_1 = __importDefault(require("express"));
+const Safety_1 = __importDefault(require("../../middleware/Safety"));
 const SenadoRoute_1 = __importDefault(require("../../routes/SenadoRoute"));
 const PresidenciaRoute_1 = __importDefault(require("../../routes/PresidenciaRoute"));
 const CamaraRoute_1 = __importDefault(require("../../routes/CamaraRoute"));
@@ -36,11 +37,11 @@ class Server {
         this.app.use('/api/public/departamento', DepartamentoRoute_1.default);
         this.app.use('/api/public/senado', SenadoRoute_1.default);
         this.app.use('/api/public/presidencia', PresidenciaRoute_1.default);
-        this.app.use('/api/public/gobernacion', GobernacionRoute_1.default);
-        this.app.use('/api/public/asamblea', AsambleaRoute_1.default);
-        this.app.use('/api/public/alcaldia', AlcaldiaRoute_1.default);
-        this.app.use('/api/public/concejo', ConcejoRoute_1.default);
-        this.app.use('/api/public/jal', JalRoute_1.default);
+        this.app.use('/api/private/gobernacion', Safety_1.default.verificarToken, GobernacionRoute_1.default);
+        this.app.use('/api/private/asamblea', Safety_1.default.verificarToken, AsambleaRoute_1.default);
+        this.app.use('/api/private/alcaldia', Safety_1.default.verificarToken, AlcaldiaRoute_1.default);
+        this.app.use('/api/private/concejo', Safety_1.default.verificarToken, ConcejoRoute_1.default);
+        this.app.use('/api/private/jal', Safety_1.default.verificarToken, JalRoute_1.default);
         this.app.use('/api/public/user', UserRoute_1.default);
     }
     start() {

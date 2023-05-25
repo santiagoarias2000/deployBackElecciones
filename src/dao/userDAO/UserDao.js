@@ -27,7 +27,7 @@ class UserDao {
             })
                 .catch((error) => {
                 console.log(error);
-                return res.status(400).json({ miError: "Error buscando el acceso" });
+                return res.status(400).json({ err: "Error buscando el acceso" });
             });
         });
     }
