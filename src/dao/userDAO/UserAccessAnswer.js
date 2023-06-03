@@ -24,7 +24,7 @@ class UserAccessAnswer {
                     const email = register.email_user;
                     const dasdas = { nombre: register.emailUser, dosDev: 'eso somos' };
                     console.log(user);
-                    const tokenHitData = jsonwebtoken_1.default.sign({ nombre: register.full_name, dosDev: 'eso somos' }, 'LaClaveVaAqui', { expiresIn: '1h' });
+                    const tokenHitData = jsonwebtoken_1.default.sign({ nombre: register.full_name, dosDev: 'eso somos' }, 'LaClaveVaAqui', { expiresIn: '8h' });
                     return res.status(200).json({ tokenHitData: tokenHitData, tokenName: user, tokenEmail: email, tokenFull: dasdas });
                 }
                 else {
