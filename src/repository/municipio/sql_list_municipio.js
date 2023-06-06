@@ -14,5 +14,8 @@ exports.SQL_MUNICIPIO = {
     ONE_LOCATION: "SELECT lo.id_location,(SELECT dp.name_department FROM department dp WHERE dp.id_department = 11) AS department,lo.name_location AS name_municipality \
   FROM location lo \
   WHERE lo.id_location=$1\
-  LIMIT 1"
+  LIMIT 1",
+    LOCALIDAD: "SELECT lo.id_location as id_municipality, lo.name_location as name_municipality \
+  FROM location lo \
+  WHERE  lo.id_location <>21"
 };
