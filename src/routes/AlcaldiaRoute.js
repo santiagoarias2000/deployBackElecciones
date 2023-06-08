@@ -15,6 +15,7 @@ class AlcaldiaRoute {
         this.routesApiAlcaldia.get("", ListAlcaldiaController_1.default.getMeListAlcalidaDepartamento);
         this.routesApiAlcaldia.get("/departamento/:idDepartment", AlcaldiaController_1.default.getMeListAlcaldiaDepartamento);
         this.routesApiAlcaldia.get("/municipio/:idMunicipality", AlcaldiaController_1.default.getMeListAlcaldiaMunicipio);
+        this.routesApiAlcaldia.get("/localidad/:idMunicipality", AlcaldiaController_1.default.getMeListAlcaldiaLocalidad);
     }
 }
 const alcaldiaRoute = new AlcaldiaRoute();

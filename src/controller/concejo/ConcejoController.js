@@ -16,6 +16,11 @@ class ConcejoController extends ListDao_1.default {
         const parametro = [id_municipality];
         ConcejoController.getInfoEspecific(sql_details_especific_concejo_1.SQL_DETAILS_ESPECIFICS_CONCEJO.CONCEJO_DEPARTAMENTO_MUNICICPIO, parametro, res);
     }
+    getMeListConcejoLocalidad(req, res) {
+        const id_municipality = req.params.idMunicipality;
+        const parametro = [id_municipality];
+        ConcejoController.getInfoEspecific(sql_details_especific_concejo_1.SQL_DETAILS_ESPECIFICS_CONCEJO.CONCEJO_LOCALIDAD, parametro, res);
+    }
 }
 const concejoController = new ConcejoController();
 exports.default = concejoController;

@@ -16,6 +16,11 @@ class AlcaldiaController extends ListDao_1.default {
         const parametro = [id_municipality];
         AlcaldiaController.getInfoEspecific(sql_details_especifics_alacaldia_1.SQL_DETAILS_ESPECIFICS_ALCALDIA.ALCALDIA_MUNICIPIO, parametro, res);
     }
+    getMeListAlcaldiaLocalidad(req, res) {
+        const id_municipality = req.params.idMunicipality;
+        const parametro = [id_municipality];
+        AlcaldiaController.getInfoEspecific(sql_details_especifics_alacaldia_1.SQL_DETAILS_ESPECIFICS_ALCALDIA.ALCALDIA_LOCALIDAD, parametro, res);
+    }
 }
 const alcaldiaController = new AlcaldiaController();
 exports.default = alcaldiaController;

@@ -18,14 +18,9 @@ class UserAccessAnswer {
         return __awaiter(this, void 0, void 0, function* () {
             if (register != null) {
                 if (register != null) {
-                    console.log(register);
                     ///vamos a crear el token
-                    const user = register.full_name;
-                    const email = register.email_user;
-                    const dasdas = { nombre: register.emailUser, dosDev: 'eso somos' };
-                    console.log(user);
-                    const tokenHitData = jsonwebtoken_1.default.sign({ nombre: register.full_name, dosDev: 'eso somos' }, 'LaClaveVaAqui', { expiresIn: '8h' });
-                    return res.status(200).json({ tokenHitData: tokenHitData, tokenName: user, tokenEmail: email, tokenFull: dasdas });
+                    const tokenHitData = jsonwebtoken_1.default.sign({ nombre: register.full_name, dosDev: 'eso somos' }, 'LaClaveVaAqui', { expiresIn: '1h' });
+                    return res.status(200).json({ tokenHitData: tokenHitData });
                 }
                 else {
                     return res.status(401).json({ miError: 'Usuario incorrecto' });

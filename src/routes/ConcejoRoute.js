@@ -15,6 +15,7 @@ class ConcejoRoute {
         this.routesApiConcejo.get("", ListConcejoController_1.default.getMeListConcejoDepartamento);
         this.routesApiConcejo.get("/departamento/:idDepartment", ConcejoController_1.default.getMeListConcejoDepartamento);
         this.routesApiConcejo.get("/municipio/:idMunicipality", ConcejoController_1.default.getMeListConcejoDepartamentoMunicipio);
+        this.routesApiConcejo.get("/localidad/:idMunicipality", ConcejoController_1.default.getMeListConcejoLocalidad);
     }
 }
 const concejoRoute = new ConcejoRoute();
