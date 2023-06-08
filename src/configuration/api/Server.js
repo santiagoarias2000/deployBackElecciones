@@ -18,14 +18,17 @@ const AlcaldiaRoute_1 = __importDefault(require("../../routes/AlcaldiaRoute"));
 const ConcejoRoute_1 = __importDefault(require("../../routes/ConcejoRoute"));
 const JalRoute_1 = __importDefault(require("../../routes/JalRoute"));
 const UserRoute_1 = __importDefault(require("../../routes/UserRoute"));
+const dotenv_1 = __importDefault(require("dotenv"));
 class Server {
     constructor() {
+        //get variables to access at variables.env
+        dotenv_1.default.config({ path: "variables.env" });
         this.app = (0, express_1.default)();
         this.startSetting();
         this.activeRoute();
     }
     startSetting() {
-        this.app.set("PORT", 3123);
+        this.app.set("PORT", process.env.PORT);
         this.app.use((0, cors_1.default)());
         this.app.use((0, morgan_1.default)("dev"));
         this.app.use(express_1.default.json({ limit: "1000mb" }));
