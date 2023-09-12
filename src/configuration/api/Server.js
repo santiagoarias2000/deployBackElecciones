@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
 const express_1 = __importDefault(require("express"));
-const Safety_1 = __importDefault(require("../../middleware/Safety"));
 const SenadoRoute_1 = __importDefault(require("../../routes/SenadoRoute"));
 const PresidenciaRoute_1 = __importDefault(require("../../routes/PresidenciaRoute"));
 const CamaraRoute_1 = __importDefault(require("../../routes/CamaraRoute"));
@@ -18,17 +17,14 @@ const AlcaldiaRoute_1 = __importDefault(require("../../routes/AlcaldiaRoute"));
 const ConcejoRoute_1 = __importDefault(require("../../routes/ConcejoRoute"));
 const JalRoute_1 = __importDefault(require("../../routes/JalRoute"));
 const UserRoute_1 = __importDefault(require("../../routes/UserRoute"));
-const dotenv_1 = __importDefault(require("dotenv"));
 class Server {
     constructor() {
-        //get variables to access at variables.env
-        dotenv_1.default.config({ path: "variables.env" });
         this.app = (0, express_1.default)();
         this.startSetting();
         this.activeRoute();
     }
     startSetting() {
-        this.app.set("PORT", process.env.PORT);
+        this.app.set("PORT", 3123);
         this.app.use((0, cors_1.default)());
         this.app.use((0, morgan_1.default)("dev"));
         this.app.use(express_1.default.json({ limit: "1000mb" }));
@@ -40,11 +36,11 @@ class Server {
         this.app.use('/api/public/departamento', DepartamentoRoute_1.default);
         this.app.use('/api/public/senado', SenadoRoute_1.default);
         this.app.use('/api/public/presidencia', PresidenciaRoute_1.default);
-        this.app.use('/api/private/gobernacion', Safety_1.default.verificarToken, GobernacionRoute_1.default);
-        this.app.use('/api/private/asamblea', Safety_1.default.verificarToken, AsambleaRoute_1.default);
-        this.app.use('/api/private/alcaldia', Safety_1.default.verificarToken, AlcaldiaRoute_1.default);
-        this.app.use('/api/private/concejo', Safety_1.default.verificarToken, ConcejoRoute_1.default);
-        this.app.use('/api/private/jal', Safety_1.default.verificarToken, JalRoute_1.default);
+        this.app.use('/api/private/gobernacion', GobernacionRoute_1.default);
+        this.app.use('/api/private/asamblea', AsambleaRoute_1.default);
+        this.app.use('/api/private/alcaldia', AlcaldiaRoute_1.default);
+        this.app.use('/api/private/concejo', ConcejoRoute_1.default);
+        this.app.use('/api/private/jal', JalRoute_1.default);
         this.app.use('/api/public/user', UserRoute_1.default);
     }
     start() {
